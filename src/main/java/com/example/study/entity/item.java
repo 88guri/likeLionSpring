@@ -9,12 +9,14 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "items")
-public class Book {
+public class item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "name")
     private String name;
+    @Column(name="description")
+    private String description;
     @Column(name = "price")
     private Long price;
 }
