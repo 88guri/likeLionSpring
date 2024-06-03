@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "items")
+@Table(name = "book")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

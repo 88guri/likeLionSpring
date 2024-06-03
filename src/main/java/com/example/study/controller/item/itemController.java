@@ -2,13 +2,11 @@ package com.example.study.controller.item;
 
 import com.example.study.entity.item;
 import com.example.study.model.AddItemInput;
+import com.example.study.model.UpdateItemInput;
 import com.example.study.repository.itemRepository;
 import com.example.study.service.itemService;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +29,10 @@ public class itemController {
     @PostMapping("/items")
     public void addItem(@RequestBody @Valid AddItemInput input) {
         itemService.add(input);
+    }
+
+    @PutMapping("/items/{id}")
+    public void updateItem(@PathVariable Long id, @RequestBody @Valid UpdateItemInput input) {
+        itemService.update(id, input);
     }
 }
